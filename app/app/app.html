@@ -1,0 +1,5 @@
+<router-outlet>
+    <div class="rower-list">
+        <rower *ngFor="#r of appService.state.rowers" [rower]="r"></rower>
+    </div>
+</router-outlet>

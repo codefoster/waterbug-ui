@@ -1,0 +1,55 @@
+div {
+    font-family: 'Segoe UI';
+    font-size: 30pt;
+}
+.rower-card {
+    border-radius:1px;
+    padding:5px;
+    background-color:rgba(0,0,0,0.1);
+    height:100%;
+    
+}
+
+.flex {
+    display:flex;
+    
+}
+
+.flex > div {
+    flex-grow:1;
+}
+
+.column-flex {
+    flex-direction: column;
+}
+
+.row-flex {
+    align-items:center;
+}
+
+.row-flex > div {
+    text-align: center;
+}
+
+.row-flex > div:first-child {
+    text-align:left;
+}
+
+.row-flex > div:last-child {
+    text-align:right;
+}
+
+.visual {
+    display:flex;
+}
+
+.visual > div {
+    height:20px;
+}
+
+.visual .distance {
+    background-color:green;
+}
+.visual .remaining {
+    background-color:yellow;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Waterbug</title>
+	
+	<!-- Bootstrap stuff -->
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<!--<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+	<!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />-->
+	
+	<!-- Angular2 stuff -->
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+	<script src="node_modules/rxjs/bundles/Rx.js"></script>
+	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+	<script src="node_modules/angular2/bundles/router.dev.js"></script>
+	<script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension:'js'
+                }
+            }
+		});
+		System.import("app/app/app.js")
+            .then(null, console.error.bind(console));
+	</script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <app></app>
+</body>
+
+</html>

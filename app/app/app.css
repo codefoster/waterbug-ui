@@ -1,0 +1,14 @@
+.rower-list {
+    border:solid 1px green;
+    background-color:goldenrod;
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    height:100%;
+    box-sizing: border-box;
+}
+rower {
+    flex:1;
+    box-sizing: border-box;
+    margin:20px;
+}
