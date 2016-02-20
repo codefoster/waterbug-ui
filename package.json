@@ -1,6 +1,8 @@
 {
   "name": "waterbug-client",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "author": "Jeremy Foster <jeremy.foster@live.com> (http://codefoster.com)",
+  "description": "Client website for the Waterbug project",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
