@@ -7,20 +7,19 @@ export class AppService {
     constructor() {
         this.state = {
             raceDistance: 500,
+            startTime: null,
             rowers: [
                 {
                     name: 'jeremy',
                     strokeRates: [24.5, 24.0, 25.5, 26.0, 25.5],
                     caloriesPerMinute: 78,
-                    distance: 99,
-                    elapsedTime: 73423
+                    distance: 99
                 },
                 {
                     name: 'daniel',
                     strokeRates: [24.5, 24.0, 25.5, 26.0, 25.5],
                     caloriesPerMinute: 78,
-                    distance: 300,
-                    elapsedTime: 73423
+                    distance: 300
                 }
             ]
         }

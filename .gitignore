@@ -34,5 +34,5 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-client/**/*.js
-client/**/*.js.map
+app/**/*.js
+app/**/*.js.map

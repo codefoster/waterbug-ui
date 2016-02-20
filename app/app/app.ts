@@ -23,6 +23,13 @@ export class App {
         //     socket.emit('my other event', { my: 'data' });
         // });
         
+        //NOTE: I don't like how I'm having to pass the appService to the other function here
+        this.startRace(appService);
+    }
+    
+    startRace(appService: AppService){
+        appService.state.startTime = moment();
+        console.log('|' + appService.state.startTime + '|')
     }
 }
 
