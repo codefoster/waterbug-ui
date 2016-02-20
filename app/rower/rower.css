@@ -7,7 +7,6 @@ div {
     padding:5px;
     background-color:rgba(0,0,0,0.1);
     height:100%;
-    
 }
 
 .flex {
@@ -37,6 +36,11 @@ div {
 
 .row-flex > div:last-child {
     text-align:right;
+}
+
+.title-bar {
+    background-color:green;
+    text-transform: uppercase;    
 }
 
 .visual {
