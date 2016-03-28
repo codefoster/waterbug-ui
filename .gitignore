@@ -36,3 +36,4 @@ node_modules
 
 app/**/*.js
 app/**/*.js.map
+typings
