@@ -6,7 +6,7 @@ export class AppService {
 
     constructor() {
         this.state = {
-            raceDistance: 500,
+            raceDistance: null,
             startTime: null,
             rowers: [
                 {
