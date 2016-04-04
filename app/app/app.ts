@@ -34,7 +34,7 @@ export class App {
         socket.on("stroke", function(data) {
             //update our app state with the new message
             //will require adding the stroke rate to the user's array
-            alert(`we just got a stroke message from ${data.name}`);
+            console.log(JSON.stringify(appService.state));
         });
     }
 
