@@ -2,7 +2,6 @@ import {bootstrap} from 'angular2/platform/browser';
 import { Component, provide } from "angular2/core";
 import { Rower } from "../rower/rower";
 import { AppService } from "../app.service/app.service"
-import { SocketService } from "../socket.service/socket.service"
 import { HTTP_PROVIDERS } from "angular2/http";
 
 @Component({
@@ -14,23 +13,35 @@ import { HTTP_PROVIDERS } from "angular2/http";
 })
 
 export class App {
-    constructor(private socketService: SocketService, private appService: AppService) {
-        socketService.initialize();
+    constructor(private appService: AppService) {
         // socket.emit('msg', 'hello from the client');
 
-        // socket.on('news', function(data) {
-        //     console.log(data);
-        //     socket.emit('my other event', { my: 'data' });
-        // });
-        
+        var socket = io("http://cf.ngrok.io");
+
         //NOTE: I don't like how I'm having to pass the appService to the other function here
-        this.startRace(appService);
+        this.startRace();
+
+        //this emits a stroke to the server
+        //this would normally be done on each actual stroke of the machine        
+        socket.emit("stroke", {
+            name: 'jeremy',
+            strokeRate: 23, //note that this is only a _single_ stroke rate value
+            caloriesPerMinute: 78,
+            distance: 99
+        });
+        
+        //handle a stroke message
+        socket.on("stroke", function(data) {
+            //update our app state with the new message
+            //will require adding the stroke rate to the user's array
+            alert(`we just got a stroke message from ${data.name}`);
+        });
     }
-    
-    startRace(appService: AppService){
-        appService.state.startTime = moment();
-        console.log('|' + appService.state.startTime + '|')
+
+    startRace() {
+        // appService.state.startTime = moment();
+        console.log('|' + this.appService.state.startTime + '|')
     }
 }
 
-bootstrap(App, [SocketService, AppService]);
+bootstrap(App, [AppService]);
