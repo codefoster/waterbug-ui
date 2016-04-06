@@ -1,6 +1,9 @@
 <div class="rower-card flex column-flex">
     <div class='title-bar flex row-flex'>
-        <div class="name">{{rower.name}}</div>
+        <div class="name">
+            {{rower.name}}
+            <span (click)="simulateStroke()" style="cursor:pointer;font-size:12pt;">simulate a stroke</span>
+        </div>
         <div class="place">{place}</div>
     </div>
     <div class='flex row-flex'>
