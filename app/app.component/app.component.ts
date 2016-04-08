@@ -1,26 +1,26 @@
-import { bootstrap } from 'angular2/platform/browser';
 import { Component, provide } from "angular2/core";
-import { Rower } from "../rower/rower";
 import { AppService } from "../app.service/app.service"
+import { Rower } from "../rower.component/rower.component";
 import { HTTP_PROVIDERS } from "angular2/http";
 
 @Component({
     selector: "app",
-    templateUrl: "app/app/app.html",
+    templateUrl: "app/app.component/app.component.html",
     directives: [Rower],
     providers: [HTTP_PROVIDERS],
-    styleUrls: ["app/app/app.css"]
+    styleUrls: ["app/app.component/app.component.css"]
 })
-export class App {
+export class AppComponent {
     private socket;
 
     constructor(private appService: AppService) {
         this.socket = io("http://cf.ngrok.io");
-
+        
         //handle a stroke message
         this.socket.on("stroke", (data) => {
             //TODO: update our app state with the new message
             //will require adding the stroke rate to the user's array
+            
             console.log(JSON.stringify(data));
         });
 
@@ -51,4 +51,3 @@ export class App {
     }
 }
 
-bootstrap(App, [AppService]);

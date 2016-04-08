@@ -4,8 +4,8 @@ import { AppService } from '../app.service/app.service';
 @Component({
     selector: 'rower',
     inputs: ['rower'],
-    templateUrl: 'app/rower/rower.html',
-    styleUrls: ['app/rower/rower.css']
+    templateUrl: 'app/rower.component/rower.component.html',
+    styleUrls: ['app/rower.component/rower.component.css']
 })
 export class Rower {
     public rower: any;
