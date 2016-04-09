@@ -1,27 +1,25 @@
 import { Injectable } from 'angular2/core';
+import * as _ from 'lodash';
 
 @Injectable()
 export class AppService {
-    public state;
+    public _state;
 
     constructor() {
-        this.state = {
+        this._state = {
             raceDistance: null,
             startTime: null,
-            rowers: [
-                {
-                    name: 'jeremy',
-                    strokeRates: [24.5, 24.0, 25.5, 26.0, 25.5],
-                    caloriesPerMinute: 78,
-                    distance: 99
-                },
-                {
-                    name: 'daniel',
-                    strokeRates: [24.5, 24.0, 25.5, 26.0, 25.5],
-                    caloriesPerMinute: 78,
-                    distance: 300
-                }
-            ]
+            rowers: []
         }
     }
+    
+    get state() {
+        return this._state;
+    }
+    
+    getRank(name:string) {
+        let rankedRowers = this._state.rowers.order(r => r.distance);
+        return rankedRowers.findIndex(r => r.name == name) + 1;
+    }
+    
 }

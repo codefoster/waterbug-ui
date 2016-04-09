@@ -16,9 +16,20 @@ export class RaceControls {
         this.socket.on("stroke", (data) => {
             //TODO: update our app state with the new message
             //will require adding the stroke rate to the user's array
-            if(this.appService.state.rowers.filter(r => r.name == data.name).length)
-                console.log('contains');
-            console.log(JSON.stringify(data));
+            if (this.appService._state.rowers.findIndex(r => r.name == data.name) == -1)
+                this.appService._state.rowers.push({
+                    name: data.name,
+                    strokeRates: [data.strokeRate],
+                    caloriesPerMinute: data.caloriesPerMinute,
+                    distance: data.distance
+                });
+            else {
+                console.log(JSON.stringify(data));
+                let r = this.appService._state.rowers.find(r => r.name == data.name)
+                r.strokeRates.push(data.strokeRate);
+                r.distance += data.distance;
+            }
+            console.log(JSON.stringify(this.appService._state));
         });
 
         this.socket.on("startrace", (racedata) => {
@@ -35,12 +46,12 @@ export class RaceControls {
         })
     }
 
-    simulateStroke(name:string) {
+    simulateStroke(name: string) {
         this.socket.emit("stroke", {
             name: name,
             strokeRate: (Math.random() * 5) + 20,
             caloriesPerMinute: (Math.random() * 10) + 70,
-            distance: 0
+            distance: (Math.random() * 10) + 95
         });
     }
 

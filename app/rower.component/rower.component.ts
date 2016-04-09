@@ -7,8 +7,7 @@ import { AppService } from '../app.service/app.service';
     styleUrls: ['app/rower.component/rower.component.css']
 })
 export class Rower {
-    @Input()
-    public rower: any;
+    @Input() public rower: any;
     public raceDistance;
     private socket;
 
