@@ -16,20 +16,20 @@ export class RaceControls {
         this.socket.on("stroke", (data) => {
             //TODO: update our app state with the new message
             //will require adding the stroke rate to the user's array
-            if (this.appService._state.rowers.findIndex(r => r.name == data.name) == -1)
+            console.log(`stroke received from ${data.name}`);
+            if (this.appService._state.rowers.findIndex(r => r.name == data.name) == -1) {
+                console.log(`adding ${data.name}`);
                 this.appService._state.rowers.push({
                     name: data.name,
                     strokeRates: [data.strokeRate],
                     caloriesPerMinute: data.caloriesPerMinute,
                     distance: data.distance
                 });
-            else {
-                console.log(JSON.stringify(data));
+            } else {
                 let r = this.appService._state.rowers.find(r => r.name == data.name)
                 r.strokeRates.push(data.strokeRate);
                 r.distance += data.distance;
             }
-            console.log(JSON.stringify(this.appService._state));
         });
 
         this.socket.on("startrace", (racedata) => {
