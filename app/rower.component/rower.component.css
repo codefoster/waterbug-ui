@@ -1,17 +1,23 @@
+main {
+    flex:1;
+    flex-grow: 1;
+    box-sizing: border-box;
+    margin:10px;
+    display:flex;
+    flex-direction: column;
+    border-radius:1px;
+    padding:5px;
+    background-color:rgba(0,0,0,0.1);
+    border:2px dashed gray;
+}
+
 div {
     font-family: 'Segoe UI';
     font-size: 30pt;
 }
-.rower-card {
-    border-radius:1px;
-    padding:5px;
-    background-color:rgba(0,0,0,0.1);
-    height:100%;
-}
 
 .flex {
     display:flex;
-    
 }
 
 .flex > div {

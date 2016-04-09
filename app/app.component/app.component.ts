@@ -6,6 +6,7 @@ import { Race } from "../race.component/race.component";
     selector: "app",
     templateUrl: "app/app.component/app.component.html",
     directives: [Race],
+    styleUrls: ["app/app.component/app.component.css"]
 })
 export class AppComponent {
     constructor() {
