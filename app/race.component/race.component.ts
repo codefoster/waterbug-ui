@@ -7,6 +7,7 @@ import { RowerListComponent } from "../rower-list.component/rower-list.component
     selector: "race",
     templateUrl: "app/race.component/race.component.html",
     directives: [RaceControlsComponent, RowerListComponent],
+    providers: [RaceService],
     styleUrls:["app/race.component/race.component.css"]
 })
 export class RaceComponent {

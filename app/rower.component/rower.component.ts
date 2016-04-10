@@ -8,10 +8,8 @@ import { RaceService } from '../race.service/race.service';
 })
 export class RowerComponent {
     @Input() public rower: any;
-    public raceDistance;
     private socket;
-
-    constructor(raceService: RaceService) {
-         this.raceDistance = raceService.state.raceDistance;
+    
+    constructor(private raceService: RaceService) {
     }
 }

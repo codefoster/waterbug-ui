@@ -14,16 +14,5 @@ export class RowerListComponent {
     constructor(private raceService: RaceService) {
     }
 
-    startRace() {
-        let racedata = {
-            startTime: new Date(),
-            distance: 500 //hard code to 500m for now
-        };
-        this.socket.emit("startrace", racedata);
-    }
-    
-    stopRace() {
-        this.socket.emit("stoprace");
-    }
 }
 
