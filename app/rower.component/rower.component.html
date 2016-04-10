@@ -1,21 +1,19 @@
-<main>
-    <div class='title-bar flex row-flex'>
-        <div class="name">
-            {{rower.name}}
-        </div>
-        <div class="place"></div>
+<div class='title-bar flex row-flex'>
+    <div class="name">
+        {{rower.name}}
     </div>
-    <div class='flex row-flex'>
-        <div>{{rower.strokeRates[0]}}</div>
-        <div>{calories}</div>
-    </div>
-    <div class="visual">
-        <div [style.width]="rower.distance + 'px'" class="distance"></div>
-        <div [style.width]="raceDistance - rower.distance + 'px'" class="remaining"></div>
-    </div>
-    <div class='flex row-flex'>
-        <div>{{rower.distance}}</div>
-        <div>{{rower.elapsedTime}}</div>
-        <div>{{ raceDistance - rower.distance }}</div>
-    </div>
-</main>
+    <div class="place"></div>
+</div>
+<div class='flex row-flex'>
+    <div>{{rower.strokeRates[0]}}</div>
+    <div>{{rower.caloriesPerMinute}}</div>
+</div>
+<div class="visual">
+    <div [style.width]="rower.distance + 'px'" class="distance"></div>
+    <div [style.width]="raceDistance - rower.distance + 'px'" class="remaining"></div>
+</div>
+<div class='flex row-flex'>
+    <div>{{rower.distance}}</div>
+    <div>{{rower.elapsedTime}}</div>
+    <div>{{ raceDistance - rower.distance }}</div>
+</div>

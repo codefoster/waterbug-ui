@@ -1,4 +1,4 @@
-main {
+:host {
     flex:1;
     flex-grow: 1;
     box-sizing: border-box;
