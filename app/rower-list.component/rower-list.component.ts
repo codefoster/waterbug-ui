@@ -1,14 +1,14 @@
 import { Component, provide } from "angular2/core";
 import { AppService } from "../app.service/app.service"
-import { Rower } from "../rower.component/rower.component";
+import { RowerComponent } from "../rower.component/rower.component";
 
 @Component({
     selector: "rower-list",
     templateUrl: "app/rower-list.component/rower-list.component.html",
-    directives: [Rower],
+    directives: [RowerComponent],
     styleUrls: ["app/rower-list.component/rower-list.component.css"]
 })
-export class RowerList {
+export class RowerListComponent {
     private socket;
 
     constructor(private appService: AppService) {

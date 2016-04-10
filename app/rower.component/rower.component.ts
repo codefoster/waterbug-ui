@@ -6,7 +6,7 @@ import { AppService } from '../app.service/app.service';
     templateUrl: 'app/rower.component/rower.component.html',
     styleUrls: ['app/rower.component/rower.component.css']
 })
-export class Rower {
+export class RowerComponent {
     @Input() public rower: any;
     public raceDistance;
     private socket;

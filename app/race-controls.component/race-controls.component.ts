@@ -6,7 +6,7 @@ import { AppService } from "../app.service/app.service"
     templateUrl: "app/race-controls.component/race-controls.component.html",
     styleUrls: ["app/race-controls.component/race-controls.component.css"]
 })
-export class RaceControls {
+export class RaceControlsComponent {
     private socket;
 
     constructor(private appService: AppService) {
