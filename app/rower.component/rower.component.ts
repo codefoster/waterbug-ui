@@ -1,5 +1,5 @@
 import { Component, Input } from 'angular2/core';
-import { AppService } from '../app.service/app.service';
+import { RaceService } from '../race.service/race.service';
 
 @Component({
     selector: 'rower',
@@ -11,7 +11,7 @@ export class RowerComponent {
     public raceDistance;
     private socket;
 
-    constructor(appService: AppService) {
-         this.raceDistance = appService.state.raceDistance;
+    constructor(raceService: RaceService) {
+         this.raceDistance = raceService.state.raceDistance;
     }
 }

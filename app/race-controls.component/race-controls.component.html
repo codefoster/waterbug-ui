@@ -1,5 +1,5 @@
-<button (click)="appService.state.startTime ? stopRace() : startRace()">
-    {{ appService.state.startTime ? "Stop" : "Race" }}
+<button (click)="raceService.state.startTime ? stopRace() : startRace()">
+    {{ raceService.state.startTime ? "Stop" : "Race" }}
 </button>
 <button (click)="simulateStroke('Rower 1')" style="cursor:pointer;font-size:12pt;">Simulate pull for "Rower 1"</button>
 <button (click)="simulateStroke('Rower 2')" style="cursor:pointer;font-size:12pt;">Simulate pull for "Rower 2"</button>

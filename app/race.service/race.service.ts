@@ -1,9 +1,12 @@
 import { Injectable } from 'angular2/core';
-import * as _ from 'lodash';
+// import * as _ from 'lodash';
 
 @Injectable()
-export class AppService {
+export class RaceService {
     public _state;
+    
+    raceDistance:number;
+    startTime:Date;
 
     constructor() {
         this._state = {
