@@ -49,9 +49,9 @@ export class RaceControlsComponent {
     simulateStroke(name: string) {
         this.socket.emit("stroke", {
             name: name,
-            strokeRate: (Math.random() * 5) + 20,
-            caloriesPerMinute: (Math.random() * 10) + 70,
-            distance: (Math.random() * 10) + 95
+            strokeRate: Math.round((Math.random() * 5) + 20),
+            caloriesPerMinute: Math.round((Math.random() * 10) + 70),
+            distance: Math.round((Math.random() * 10) + 95)
         });
     }
 
