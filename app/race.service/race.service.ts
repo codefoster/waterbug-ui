@@ -16,7 +16,7 @@ export class RaceService {
             //TODO: update our app state with the new message
             //will require adding the stroke rate to the user's array
             console.log(`stroke received from ${data.name}`);
-            if (this.rowers.findIndex(r => r.name == data.name) == -1) {
+            if (!this.rowers.some(r => r.name == data.name)) {
                 console.log(`adding ${data.name}`);
                 this.rowers.push({
                     name: data.name,
@@ -25,7 +25,7 @@ export class RaceService {
                     distance: data.distance
                 });
             } else {
-                let r = this.rowers.find(r => r.name == data.name)
+                let r = this.rowers.filter(r => r.name == data.name)[0];
                 r.strokeRates.push(data.strokeRate);
                 r.distance += data.distance;
             }
