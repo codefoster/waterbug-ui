@@ -1,6 +1,5 @@
 :host {
     display:flex;
-    flex-direction:column;
     padding:20px;
     box-sizing: border-box;
     border:2px dashed gray;

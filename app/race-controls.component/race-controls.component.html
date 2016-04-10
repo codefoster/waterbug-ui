@@ -1,4 +1,5 @@
-<span (click)="startRace()" style="cursor:pointer;font-size:12pt;">start 500m race</span>
-<span (click)="stopRace()" style="cursor:pointer;font-size:12pt;">stop race</span>
-<span (click)="simulateStroke('player 1')" style="cursor:pointer;font-size:12pt;">player 1</span>
-<span (click)="simulateStroke('player 2')" style="cursor:pointer;font-size:12pt;">player 2</span>
+<button (click)="appService.state.startTime ? stopRace() : startRace()">
+    {{ appService.state.startTime ? "Stop" : "Race" }}
+</button>
+<button (click)="simulateStroke('Player 1')" style="cursor:pointer;font-size:12pt;">Simulate pull for "Player 1"</button>
+<button (click)="simulateStroke('Player 2')" style="cursor:pointer;font-size:12pt;">Simulate pull for "Player 2"</button>
