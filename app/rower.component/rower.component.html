@@ -9,8 +9,8 @@
     <div>{{rower.caloriesPerMinute}}</div>
 </div>
 <div class="visual">
-    <div [style.width.px]="rower.distance" class="distance"></div>
-    <div [style.width.px]="raceService.raceDistance - rower.distance" class="remaining"></div>
+    <div [style.flexGrow]="rower.distance" class="distance"></div>
+    <div [style.flexGrow]="raceService.raceDistance - rower.distance" class="remaining"></div>
 </div>
 <div class='flex row-flex'>
     <div>{{rower.distance}}</div>

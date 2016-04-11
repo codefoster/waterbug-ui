@@ -28,6 +28,7 @@ export class RaceService {
                 let r = this.rowers.filter(r => r.name == data.name)[0];
                 r.strokeRates.push(data.strokeRate);
                 r.distance += data.distance;
+                console.log(JSON.stringify(r.strokeRates));
             }
         });
 
