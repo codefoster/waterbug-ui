@@ -17,6 +17,7 @@ export class RaceService {
             //will require adding the stroke rate to the user's array
             console.log(`stroke received from ${data.name}`);
             if (!this.rowers.some(r => r.name == data.name)) {
+                // rower doesn't exist, so add them
                 console.log(`adding ${data.name}`);
                 this.rowers.push({
                     name: data.name,
@@ -25,9 +26,10 @@ export class RaceService {
                     distance: data.distance
                 });
             } else {
+                // rower exists, so update
                 let r = this.rowers.filter(r => r.name == data.name)[0];
                 r.strokeRates.push(data.strokeRate);
-                r.distance += data.distance;
+                r.distance = Math.min(this.raceDistance, r.distance + data.distance);
                 console.log(JSON.stringify(r.strokeRates));
             }
         });
