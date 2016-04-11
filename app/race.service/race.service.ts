@@ -30,6 +30,10 @@ export class RaceService {
                 let r = this.rowers.filter(r => r.name == data.name)[0];
                 r.strokeRates.push(data.strokeRate);
                 r.distance = Math.min(this.raceDistance, r.distance + data.distance);
+                if(r.distance >= this.raceDistance) {
+                    //TODO:declare winner
+                    this.startTime = null;
+                }
                 console.log(JSON.stringify(r.strokeRates));
             }
         });
@@ -37,6 +41,7 @@ export class RaceService {
         this.socket.on("startrace", (racedata) => {
             this.startTime = racedata.startTime;
             this.raceDistance = racedata.distance;
+            this.rowers = [];
             console.log(`race started\n  start time: ${this.startTime}\n  race distance: ${this.raceDistance}`);
         })
 
