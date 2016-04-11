@@ -1,9 +1,9 @@
-<button (click)="raceService.startTime ? raceService.stopRace() : raceService.startRace()">
-    {{ raceService.startTime ? "Stop" : "Race" }}
+<button (click)="raceService.raceOn ? raceService.stopRace() : raceService.startRace()">
+    {{ raceService.raceOn ? "Stop" : "Race" }}
 </button>
-<button (click)="raceService.simulateStroke('Rower 1')" [disabled]="!raceService.startTime" style="cursor:pointer;font-size:12pt;">
+<button (click)="raceService.simulateStroke('Rower 1')" style="cursor:pointer;font-size:12pt;">
     Simulate pull for "Rower 1"
 </button>
-<button (click)="raceService.simulateStroke('Rower 2')" [disabled]="!raceService.startTime" style="cursor:pointer;font-size:12pt;">
+<button (click)="raceService.simulateStroke('Rower 2')" style="cursor:pointer;font-size:12pt;">
     Simulate pull for "Rower 2"
 </button>

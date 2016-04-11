@@ -7,10 +7,10 @@ import { RaceService } from "../race.service/race.service"
     styleUrls: ["app/race-controls.component/race-controls.component.css"]
 })
 export class RaceControlsComponent {
-    private socket;
+
 
     constructor(private raceService: RaceService) {
-        this.socket = io("http://localhost:8080");
+        
     }
 
 }
