@@ -1,0 +1,9 @@
+:host {
+    display:flex;
+    align-items:flex-end;
+}
+
+:host > div {
+    width:10px;
+    background-color:black;
+}

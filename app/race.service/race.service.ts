@@ -11,6 +11,11 @@ export class RaceService {
     get raceOn():boolean {
         return this.startTime != null;
     }
+    
+    get elapsedTime():any {
+    //     // return (Date.now() - this.startTime;
+        return 0;
+    }
 
     constructor() {
         this.socket = io("http://localhost:8080");

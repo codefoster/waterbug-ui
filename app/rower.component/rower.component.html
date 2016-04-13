@@ -5,8 +5,8 @@
     <div class="place"></div>
 </div>
 <div class='flex row-flex'>
-    <div>{{rower.strokeRates[0]}}</div>
-    <div>{{rower.caloriesPerMinute}}</div>
+    <div><stroke-graph [strokeRates]="rower.strokeRates"></stroke-graph></div>
+    <div>CALORIES {{rower.caloriesPerMinute}}</div>
 </div>
 <div class="visual">
     <div [style.flexGrow]="rower.distance" class="distance"></div>
@@ -14,7 +14,7 @@
     <div [style.flexGrow]="raceService.raceDistance - rower.distance" class="remaining"></div>
 </div>
 <div class='flex row-flex'>
-    <div>{{rower.distance}}</div>
-    <div>{{rower.elapsedTime}}</div>
-    <div>{{raceService.raceDistance - rower.distance}}</div>
+    <div>DISTANCE {{rower.distance}}</div>
+    <div>{{raceService.elapsedTime}}s</div>
+    <div>REMAINING {{raceService.raceDistance - rower.distance}}</div>
 </div>
