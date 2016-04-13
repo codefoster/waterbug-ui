@@ -63,7 +63,7 @@ export class RaceService {
             name: name,
             strokeRate: Math.round((Math.random() * 5) + 20),
             caloriesPerMinute: Math.round((Math.random() * 10) + 70),
-            distance: Math.round((Math.random() * 10) + 95)
+            distance: Math.round((Math.random() * 5) + 20)
         });
     }
 
