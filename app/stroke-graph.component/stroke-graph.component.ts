@@ -8,7 +8,13 @@ import { RaceService } from '../race.service/race.service';
 })
 export class StrokeGraphComponent {
     @Input() public strokeRates: number[];
-        
+
     constructor(private raceService: RaceService) {
+    }
+
+    displayHeight(value: number): string {
+        let max = 0;
+        this.strokeRates.forEach(sr => max = Math.max(max, sr));
+        return Math.round(100 * value / max) + '%';
     }
 }

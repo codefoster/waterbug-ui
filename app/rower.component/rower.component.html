@@ -1,11 +1,20 @@
-<div class='title-bar flex row-flex'>
+<!-- Make sure each row has at least 3 divs b/c of the way the styling works
+    The first and last divs don't flex-grow, but every other does. This allows
+    the cells to be justified -->
+    
+<div class='title-bar'>
     <div class="name">
         {{rower.name}}
     </div>
-    <div class="place"></div>
+    <div></div>
+    <div class="place">(rank)</div>
+    <div class="remove"><img src="/app/rower.component/remove.png" alt="close"></div>
 </div>
-<div class='flex row-flex'>
-    <div><stroke-graph [strokeRates]="rower.strokeRates"></stroke-graph></div>
+<div>
+    <div>
+        <stroke-graph [strokeRates]="rower.strokeRates"></stroke-graph>
+    </div>
+    <div></div>
     <div>CALORIES {{rower.caloriesPerMinute}}</div>
 </div>
 <div class="visual">
@@ -13,7 +22,7 @@
     <img src="/app/rower.component/boat-action.gif"/>
     <div [style.flexGrow]="raceService.raceDistance - rower.distance" class="remaining"></div>
 </div>
-<div class='flex row-flex'>
+<div>
     <div>DISTANCE {{rower.distance}}</div>
     <div>{{raceService.elapsedTime}}s</div>
     <div>REMAINING {{raceService.raceDistance - rower.distance}}</div>

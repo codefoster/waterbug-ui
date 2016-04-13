@@ -6,49 +6,36 @@
     display:flex;
     flex-direction: column;
     border-radius:1px;
-    padding:5px;
     background-color:rgba(0,0,0,0.1);
-    border:2px dashed gray;
-}
-
-div {
     font-family: 'Segoe UI';
     font-size: 30pt;
 }
 
-.flex {
+:host > div {
     display:flex;
+    align-items:justify;
+    margin:5px;
 }
 
-.flex > div {
-    flex-grow:1;
-}
-
-.column-flex {
-    flex-direction: column;
-}
-
-.row-flex {
-    align-items:center;
-}
-
-.row-flex > div {
+:host > div > div {
     text-align: center;
 }
 
-.row-flex > div:first-child {
-    text-align:left;
-}
-
-.row-flex > div:last-child {
-    text-align:right;
+:host > div > div:not(:first-child):not(:last-child) {
+    flex-grow:1;
 }
 
 .title-bar {
     background-color:green;
-    text-transform: uppercase;    
+    text-transform: uppercase;
+    margin:0px;
 }
 
-.visual {
-    display:flex;
+.remove {
+    padding-left:20px;
+    padding-right:20px;
+}
+
+stroke-graph {
+    height:40px;
 }
