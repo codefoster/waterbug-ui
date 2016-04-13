@@ -52,14 +52,3 @@ div {
 .visual {
     display:flex;
 }
-
-.visual > div {
-    height:20px;
-}
-
-.visual .distance {
-    background-color:green;
-}
-.visual .remaining {
-    background-color:white;
-}
