@@ -11,24 +11,13 @@
     font-size: 30pt;
 }
 
-:host > div {
-    display:flex;
-    align-items:justify;
-    margin:5px;
-}
-
-:host > div > div {
-    text-align: center;
-}
-
-:host > div > div:not(:first-child):not(:last-child) {
-    flex-grow:1;
-}
-
+/* Title Bar*/
 .title-bar {
     background-color:green;
     text-transform: uppercase;
     margin:0px;
+    display:flex;
+    justify-content:space-between;
 }
 
 .remove {
@@ -36,6 +25,31 @@
     padding-right:20px;
 }
 
+/* Body */
+.body {
+    display:flex;
+    height:100%;
+}
+
+/* Dashboard */
+.dashboard {
+    flex:1;
+    border:1px dashed gray;
+}
+
 stroke-graph {
     height:40px;
+}
+
+/* Course */
+.course {
+    flex:3;
+    border:1px dashed gray;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course > .icon {
+    flex:0;
 }

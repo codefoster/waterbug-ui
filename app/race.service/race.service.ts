@@ -51,7 +51,7 @@ export class RaceService {
         this.socket.on("startrace", (racedata) => {
             this.startTime = racedata.startTime;
             this.raceDistance = racedata.distance;
-            this.rowers.forEach(r => r.distance = 0);
+            this.rowers.forEach(r => { r.distance = 0; r.strokeRates = []; });
             console.log(`race started\n  start time: ${this.startTime}\n  race distance: ${this.raceDistance}`);
         })
 
