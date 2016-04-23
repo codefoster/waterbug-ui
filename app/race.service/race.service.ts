@@ -18,7 +18,8 @@ export class RaceService {
     }
 
     constructor() {
-        this.socket = io("http://localhost:8080");
+        // this.socket = io("http://localhost:8080");
+        this.socket = io("http://server.waterbug.site");
 
         //handle a stroke message
         this.socket.on("stroke", (data) => {
