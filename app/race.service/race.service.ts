@@ -1,5 +1,4 @@
 import { Injectable } from 'angular2/core';
-// import * as _ from 'lodash';
 
 @Injectable()
 export class RaceService {
@@ -10,11 +9,6 @@ export class RaceService {
 
     get raceOn(): boolean {
         return this.startTime != null;
-    }
-
-    get elapsedTime(): any {
-        //     // return (Date.now() - this.startTime;
-        return 0;
     }
 
     constructor() {
@@ -85,10 +79,5 @@ export class RaceService {
     stopRace() {
         this.socket.emit("stoprace");
     }
-
-    // getRank(name:string) {
-    //     let rankedRowers = this.rowers.order(r => r.distance);
-    //     return rankedRowers.findIndex(r => r.name == name) + 1;
-    // }
 
 }
