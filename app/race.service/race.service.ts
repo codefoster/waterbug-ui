@@ -8,21 +8,22 @@ export class RaceService {
     startTime: Date;
     rowers: any[] = [];
 
-    get raceOn():boolean {
+    get raceOn(): boolean {
         return this.startTime != null;
     }
-    
-    get elapsedTime():any {
-    //     // return (Date.now() - this.startTime;
+
+    get elapsedTime(): any {
+        //     // return (Date.now() - this.startTime;
         return 0;
     }
 
     constructor() {
-        // this.socket = io("http://localhost:8080");
-        this.socket = io("http://server.waterbug.site");
+        // this.socket = io("http://server.waterbug.site");
+        this.socket = io("http://localhost:8080");
 
         //handle a stroke message
         this.socket.on("stroke", (data) => {
+            console.log('onstroke');
             //TODO: update our app state with the new message
             //will require adding the stroke rate to the user's array
             console.log(`stroke received from ${data.name}`);

@@ -13,4 +13,5 @@ export class RowerComponent {
     
     constructor(private raceService: RaceService) {
     }
+
 }
