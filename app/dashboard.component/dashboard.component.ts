@@ -3,10 +3,10 @@ import { RaceService } from "../race.service/race.service"
 
 @Component({
     selector: "race-controls",
-    templateUrl: "app/race-controls.component/race-controls.component.html",
-    styleUrls: ["app/race-controls.component/race-controls.component.css"]
+    templateUrl: "app/dashboard.component/dashboard.component.html",
+    styleUrls: ["app/dashboard.component/dashboard.component.css"]
 })
-export class RaceControlsComponent {
+export class DashboardComponent {
 
 
     constructor(private raceService: RaceService) {
