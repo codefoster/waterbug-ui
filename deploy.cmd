@@ -101,7 +101,6 @@ call :SelectNodeVersion
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
   call :ExecuteCmd !NPM_CMD! install --production
-  call :ExecuteCmd !NPM_CMD! install typescript
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
