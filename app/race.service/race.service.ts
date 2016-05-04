@@ -13,8 +13,8 @@ export class RaceService {
     }
 
     constructor() {
-        // this.socket = io("http://server.waterbug.site");
-        this.socket = io.connect("http://localhost:8080");
+        this.socket = io("http://server.waterbug.site");
+        // this.socket = io.connect("http://localhost:8080");
         this.socket.on("message", d => {
             switch(d.message) {
                 case "startrace":
