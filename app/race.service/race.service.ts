@@ -1,10 +1,12 @@
 import { Injectable } from 'angular2/core';
 import * as io from 'socket.io-client';
 
+const DEFAULT_RACE_DISTANCE: number = 500;
+
 @Injectable()
 export class RaceService {
     private socket:SocketIOClient.Socket;
-    raceDistance: number;
+    raceDistance: number = DEFAULT_RACE_DISTANCE;
     startTime: Date;
     rowers: any[] = [];
 
@@ -73,7 +75,7 @@ export class RaceService {
         this.socket.send({
             message: "startrace",
             startTime: new Date(),
-            distance: 500 //hard code to 500m for now
+            distance: DEFAULT_RACE_DISTANCE //hard code to distance for now
         });
     }
 
