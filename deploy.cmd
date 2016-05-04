@@ -108,7 +108,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 
 :: 4. Compile TypeScript
 echo Transpiling TypeScript in %DEPLOYMENT_TARGET%...
-call :ExecuteCmd tsc -p "%DEPLOYMENT_TARGET%" --sourceMap=false
+call :ExecuteCmd tsc -p "%DEPLOYMENT_TARGET%"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
