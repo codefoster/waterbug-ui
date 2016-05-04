@@ -1,8 +1,9 @@
 import { Injectable } from 'angular2/core';
+import * as io from 'socket.io-client';
 
 @Injectable()
 export class RaceService {
-    private socket;
+    private socket:SocketIOClient.Socket;
     raceDistance: number;
     startTime: Date;
     rowers: any[] = [];
@@ -13,8 +14,7 @@ export class RaceService {
 
     constructor() {
         // this.socket = io("http://server.waterbug.site");
-        this.socket = io("http://localhost:8080");
-
+        this.socket = io.connect("http://localhost:8080");
         this.socket.on("message", d => {
             switch(d.message) {
                 case "startrace":

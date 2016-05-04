@@ -7,5 +7,8 @@ import { RaceComponent } from "../race.component/race.component";
     directives: [RaceComponent],
     styleUrls: ["app/app.component/app.component.css"],
 })
-export class AppComponent {}
+export class AppComponent {
+    constructor(){
+    }
+}
 

@@ -11,9 +11,7 @@ import { RowerListComponent } from "../rower-list.component/rower-list.component
     styleUrls:["app/race.component/race.component.css"]
 })
 export class RaceComponent {
-    private socket;
-
-    constructor(private raceService: RaceService) {
+    constructor() {
     }
 }
 
