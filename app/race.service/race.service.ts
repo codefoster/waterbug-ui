@@ -1,4 +1,4 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
 
 const DEFAULT_RACE_DISTANCE: number = 500;

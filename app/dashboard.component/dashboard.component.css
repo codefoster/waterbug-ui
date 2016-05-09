@@ -3,5 +3,8 @@
     flex-direction: column;
     padding:20px;
     box-sizing: border-box;
-    border:1px dashed green;
+}
+
+:host > button {
+    margin:5px 0px;
 }

@@ -1,4 +1,4 @@
-import { Component, provide } from "angular2/core";
+import { Component, provide } from "@angular/core";
 import { RaceService } from "../race.service/race.service"
 import { RowerComponent } from "../rower.component/rower.component";
 

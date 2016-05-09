@@ -1,4 +1,4 @@
-import { Component, provide } from "angular2/core";
+import { Component, provide } from "@angular/core";
 import { RaceComponent } from "../race.component/race.component";
 
 @Component({

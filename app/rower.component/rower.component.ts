@@ -1,4 +1,4 @@
-import { Component, Input } from 'angular2/core';
+import { Component, Input } from '@angular/core';
 import { StrokeGraphComponent } from '../stroke-graph.component/stroke-graph.component';
 import { RaceService } from '../race.service/race.service';
 

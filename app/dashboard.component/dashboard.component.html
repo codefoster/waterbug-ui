@@ -1,9 +1,9 @@
-<button (click)="raceService.raceOn ? raceService.stopRace() : raceService.startRace()">
+<button md-raised-button (click)="raceService.raceOn ? raceService.stopRace() : raceService.startRace()" color="primary">
     {{ raceService.raceOn ? "Stop" : "Race" }}
 </button>
-<button (click)="raceService.simulateStroke('Rower 1')" style="cursor:pointer;font-size:12pt;">
+<button md-raised-button (click)="raceService.simulateStroke('Rower 1')" style="cursor:pointer;font-size:12pt;">
     Simulate stroke for "Rower 1"
 </button>
-<button (click)="raceService.simulateStroke('Rower 2')" style="cursor:pointer;font-size:12pt;">
+<button md-raised-button (click)="raceService.simulateStroke('Rower 2')" style="cursor:pointer;font-size:12pt;">
     Simulate stroke for "Rower 2"
 </button>
