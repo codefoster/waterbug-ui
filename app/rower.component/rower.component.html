@@ -11,8 +11,8 @@
         </div>
     </div>
     <div class="course">
-        <div [style.flex]="raceService.raceDistance - rower.distance">{{raceService.raceDistance}} - {{rower.distance}} = {{raceService.raceDistance - rower.distance}}</div>
-        <div class="icon">{{raceService.raceDistance}} <img src="/app/rower.component/assets/rowboat.png"/></div>
+        <div [style.flex]="raceService.raceDistance - rower.distance"></div>
+        <div class="icon"><img src="/app/rower.component/assets/rowboat.png"/></div>
         <div [style.flex]="rower.distance"></div>
     </div>
 </div>
