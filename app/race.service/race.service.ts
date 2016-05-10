@@ -57,6 +57,9 @@ export class RaceService {
                         }
                     }
                     break;
+                case "removerower":
+                    this.rowers = this.rowers.filter(r => r.name != d.name);
+                    break;
             }
         });
     }
@@ -83,6 +86,13 @@ export class RaceService {
         this.socket.send({
             message: "stoprace"
         });
+    }
+    
+    removeRower(name:string) {
+        this.socket.send({
+            message: "removerower",
+            name: name
+        })
     }
 
 }

@@ -2,7 +2,7 @@
     <div class="name">
         {{rower.name}}
     </div>
-    <div class="remove"><img src="/app/rower.component/assets/remove.png" alt="Remove rower"></div>
+    <div class="remove" (click)="raceService.removeRower(rower.name)"><img src="/app/rower.component/assets/remove.png" alt="Remove rower"></div>
 </div>
 <div class="body">
     <div class="rowerdata">

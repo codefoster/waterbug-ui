@@ -7,4 +7,6 @@
 
 :host > button {
     margin:5px 0px;
+    cursor:pointer;
+    font-size:12pt;
 }
