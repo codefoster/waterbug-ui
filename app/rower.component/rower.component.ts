@@ -13,16 +13,16 @@ export class RowerComponent {
     @Input() public rower: any;
     private rowingSequence:Observable<string>;
     private rowingSequenceSubscription:Subscription;
-    rowerImageUrl: string = '/app/rower.component/assets/rower-1.png';
+    rowerImageUrl: string = '/app/rower.component/assets/rower1-1.png';
 
     constructor(private raceService: RaceService) {
         this.raceService.strokes$.filter(s => s.name == this.rower.name).subscribe(d => {
             if(this.rowingSequenceSubscription) this.rowingSequenceSubscription.unsubscribe();
             if(this.rower.distance >= this.raceService.raceDistance) {
-                this.rowerImageUrl = `/app/rower.component/assets/rower-yay.png`;
+                this.rowerImageUrl = `/app/rower.component/assets/rower1-win.png`;
             }
             else {
-                this.rowingSequence = Observable.interval(200).take(5).map(n => `/app/rower.component/assets/rower-${n}.png`);
+                this.rowingSequence = Observable.interval(200).take(6).map(n => `/app/rower.component/assets/rower1-${n}.png`);
                 this.rowingSequenceSubscription = this.rowingSequence.subscribe(value => this.rowerImageUrl = value);
             }                
             
