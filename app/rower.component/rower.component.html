@@ -22,7 +22,7 @@
     </div>
     <div class="course">
         <div [style.flex]="raceService.raceDistance - rower.distance"></div>
-        <div class="icon"><img src="/app/rower.component/assets/rowboat.png" /></div>
+        <div class="icon"><img [src]="rowerImageUrl" /></div>
         <div [style.flex]="rower.distance"></div>
     </div>
 </div>
