@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
-
-const DEFAULT_RACE_DISTANCE: number = 500;
+import { Config } from '../../config';
 
 @Injectable()
 export class RaceService {
     private socket:SocketIOClient.Socket;
-    raceDistance: number = DEFAULT_RACE_DISTANCE;
+    config: any = new Config();
+    raceDistance: number = this.config.defaultRaceDistance;
     startTime: Date;
     rowers: any[] = [];
 
@@ -15,8 +15,8 @@ export class RaceService {
     }
 
     constructor() {
-        this.socket = io.connect("http://server.waterbug.site");
-        // this.socket = io.connect("http://localhost:8080");
+        this.socket = io.connect(this.config.socketServerUrl);
+        
         this.socket.on("message", d => {
             switch(d.message) {
                 case "startrace":
