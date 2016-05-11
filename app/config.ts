@@ -1,4 +1,4 @@
 export class Config {
-    public socketServerUrl: string = "http://server.waterbug.site";
+    public socketServerUrl: string = "http://localhost:8080";
     public defaultRaceDistance: number = 500;
 }
