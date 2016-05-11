@@ -22,7 +22,7 @@ export class RowerComponent {
                 this.rowerImageUrl = `/app/rower.component/assets/rower-yay.png`;
             }
             else {
-                this.rowingSequence = Observable.interval(1000).take(5).map(n => `/app/rower.component/assets/rower-${n}.png`);
+                this.rowingSequence = Observable.interval(200).take(5).map(n => `/app/rower.component/assets/rower-${n}.png`);
                 this.rowingSequenceSubscription = this.rowingSequence.subscribe(value => this.rowerImageUrl = value);
             }                
             
