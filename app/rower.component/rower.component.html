@@ -7,12 +7,21 @@
 <div class="body">
     <div class="rowerdata">
         <div>
-            <stroke-graph [strokeRates]="rower.strokeRates"></stroke-graph>
+            <stroke-graph [strokeRates]="rower.strokeRates" class="value"></stroke-graph>
+            <p class="label">STROKES</p>
+        </div>
+        <div>
+            <div class="value">{{rower.distance}}</div>
+            <p class="label">DISTANCE</p>
+        </div>
+        <div>
+            <div class="value">{{raceService.raceDistance - rower.distance}}</div>
+            <p class="label">REMAINING</p>
         </div>
     </div>
     <div class="course">
         <div [style.flex]="raceService.raceDistance - rower.distance"></div>
-        <div class="icon"><img src="/app/rower.component/assets/rowboat.png"/></div>
+        <div class="icon"><img src="/app/rower.component/assets/rowboat.png" /></div>
         <div [style.flex]="rower.distance"></div>
     </div>
 </div>

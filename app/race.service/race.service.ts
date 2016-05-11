@@ -78,7 +78,7 @@ export class RaceService {
         this.socket.send({
             message: "startrace",
             startTime: new Date(),
-            distance: DEFAULT_RACE_DISTANCE //hard code to distance for now
+            distance: this.config.defaultRaceDistance //hard code to distance for now
         });
     }
 

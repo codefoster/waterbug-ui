@@ -35,7 +35,19 @@
 
 /* Rower Data */
 .rowerdata {
+    padding:10px;
     flex:1;
+    max-width:100px;
+    text-align: center;
+}
+
+.rowerdata .value {
+    font-weight:bold;
+}
+
+.rowerdata .label {
+    font-size:12pt;
+    margin-top:0px;
 }
 
 stroke-graph {

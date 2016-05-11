@@ -1,9 +1,11 @@
 :host {
     display:flex;
     align-items:flex-end;
+    justify-content: flex-start;
 }
 
 :host > div {
-    width:2px;
+    flex:1;
+    max-width:5px;
     background-color:black;
 }
