@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { StrokeGraphComponent } from '../stroke-graph.component/stroke-graph.component';
 import { RaceService } from '../race.service/race.service';
-import { Observable } from 'rxjs/Rx';
+import { Observable, Subscription } from 'rxjs/Rx';
 
 @Component({
     selector: 'rower',
@@ -12,16 +12,18 @@ import { Observable } from 'rxjs/Rx';
 export class RowerComponent {
     @Input() public rower: any;
     private rowingSequence:Observable<string>;
+    private rowingSequenceSubscription:Subscription;
     rowerImageUrl: string = '/app/rower.component/assets/rower-1.png';
 
     constructor(private raceService: RaceService) {
         this.raceService.strokes$.filter(s => s.name == this.rower.name).subscribe(d => {
+            if(this.rowingSequenceSubscription) this.rowingSequenceSubscription.unsubscribe();
             if(this.rower.distance >= this.raceService.raceDistance) {
                 this.rowerImageUrl = `/app/rower.component/assets/rower-yay.png`;
             }
             else {
                 this.rowingSequence = Observable.interval(1000).take(5).map(n => `/app/rower.component/assets/rower-${n}.png`);
-                this.rowingSequence.subscribe(value => this.rowerImageUrl = value);
+                this.rowingSequenceSubscription = this.rowingSequence.subscribe(value => this.rowerImageUrl = value);
             }                
             
         })
