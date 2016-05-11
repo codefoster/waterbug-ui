@@ -8,14 +8,15 @@
     <div class="rowerdata">
         <div>
             <stroke-graph [strokeRates]="rower.strokeRates" class="value"></stroke-graph>
-            <p class="label">STROKES</p>
+            <div class="value">{{ rower.strokeRates.length > 0 ? rower.strokeRates[rower.strokeRates.length - 1] : 0 }}<span class="units">/s</span></div>
+            <p class="label">STROKE RATE</p>
         </div>
         <div>
-            <div class="value">{{rower.distance}}</div>
+            <div class="value">{{rower.distance}}<span class="units">m</span></div>
             <p class="label">DISTANCE</p>
         </div>
         <div>
-            <div class="value">{{raceService.raceDistance - rower.distance}}</div>
+            <div class="value">{{raceService.raceDistance - rower.distance}}<span class="units">m</span></div>
             <p class="label">REMAINING</p>
         </div>
     </div>
