@@ -19,6 +19,10 @@
             <div class="value">{{raceService.raceDistance - rower.distance}}<span class="units">m</span></div>
             <p class="label">REMAINING</p>
         </div>
+        <div class="clock">
+            <div class="value"><div>{{raceService.clock}}</div></div>
+            <p class="label">TIME</p>
+        </div>
     </div>
     <div class="course">
         <div [style.flex]="raceService.raceDistance - rower.distance"></div>

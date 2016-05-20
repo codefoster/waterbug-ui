@@ -51,6 +51,13 @@
     margin-top:0px;
 }
 
+.rowerdata .clock .value{
+    font-size:17pt;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 span.units {
     font-size:12pt;
 }

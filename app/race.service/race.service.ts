@@ -10,6 +10,7 @@ export class RaceService {
     raceDistance: number = this.config.defaultRaceDistance;
     startTime: Date;
     rowers: any[] = [];
+    clockvalue: number = 0;
 
     private messages = new Subject();
     messages$: Observable<any> = this.messages.asObservable();
@@ -18,11 +19,18 @@ export class RaceService {
     get raceOn(): boolean {
         return this.startTime != null;
     }
+    get clock(): string {
+        let s = this.clockvalue % 60;
+        let m = (this.clockvalue-s)/60;
+        let h = (this.clockvalue - s - (m*60))/60;
+        return `${this.leftpad(h,2)}:${this.leftpad(m,2)}:${this.leftpad(s,2)}`;
+    }
+
 
     constructor() {
         //connect to the socket server
         this.socket = io.connect(this.config.socketServerUrl);
-        
+
         //stream all messages into our Rx Subject
         this.socket.on("message", d => this.messages.next(d));
 
@@ -53,6 +61,7 @@ export class RaceService {
                     //TODO:declare winner
                     this.startTime = null;
                 }
+                if (d.clock) this.clockvalue = d.clock;
             }
         })
 
@@ -111,4 +120,9 @@ export class RaceService {
         })
     }
 
+    leftpad(n:any, width:number, z?:string) {
+        z = z || '0';
+        n = n + '';
+        return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+    }
 }
