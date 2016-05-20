@@ -13,7 +13,7 @@ export class RaceService {
 
     private messages = new Subject();
     messages$: Observable<any> = this.messages.asObservable();
-    strokes$ = this.messages$.filter(m => m.message == "stroke");
+    strokedata$ = this.messages$.filter(m => m.message == "strokedata");
 
     get raceOn(): boolean {
         return this.startTime != null;
@@ -27,7 +27,7 @@ export class RaceService {
         this.socket.on("message", d => this.messages.next(d));
 
         //handle the strokes
-        this.strokes$.subscribe(d => {
+        this.strokedata$.subscribe(d => {
             //TODO: update our app state with the new message
             //will require adding the stroke rate to the user's array
             console.log(`stroke received from ${d.name}`);
@@ -79,7 +79,7 @@ export class RaceService {
 
     simulateStroke(name: string) {
         this.socket.send({
-            message: "stroke",
+            message: "strokedata",
             name: name,
             strokeRate: Math.round((Math.random() * 5) + 20),
             caloriesPerMinute: Math.round((Math.random() * 10) + 70),

@@ -16,7 +16,7 @@ export class RowerComponent {
     rowerImageUrl: string = '/app/rower.component/assets/rower1-1.png';
 
     constructor(private raceService: RaceService) {
-        this.raceService.strokes$.filter(s => s.name == this.rower.name).subscribe(d => {
+        this.raceService.strokedata$.filter(s => s.name == this.rower.name).subscribe(d => {
             if(this.rowingSequenceSubscription) this.rowingSequenceSubscription.unsubscribe();
             if(this.rower.distance >= this.raceService.raceDistance) {
                 this.rowerImageUrl = `/app/rower.component/assets/rower1-win.png`;
