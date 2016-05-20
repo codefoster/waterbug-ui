@@ -8,8 +8,20 @@ import { RaceService } from '../race.service/race.service';
 })
 export class ValueGraphComponent {
     @Input() public values: number[];
+    @Input() public omitOutliers: boolean = true;
+    get displayValues() {
+        if(this.omitOutliers)
+            return this.values;
+        else {
+            return this.values.filter((v,i) => {
+                let lastvalue = (i > 0 ? this.values[i-1] : 0);
+                return Math.abs(1-v/lastvalue) < 0.3;
+            })
+        }
+    }
 
     constructor(private raceService: RaceService) {
+        
     }
 
     displayHeight(value: number): string {
