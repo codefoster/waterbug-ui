@@ -46,7 +46,7 @@ export class RaceService {
             if (this.raceOn) {
                 let r = this.rowers.filter(r => r.name == d.name)[0];
                 r.strokeRates.push(d.strokeRate);
-                r.distance = Math.min(this.raceDistance, r.distance + d.distance);
+                r.distance = Math.min(this.raceDistance, d.distance);
                 if (r.distance >= this.raceDistance) {
                     //TODO:declare winner
                     this.startTime = null;
