@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { StrokeGraphComponent } from '../stroke-graph.component/stroke-graph.component';
+import { ValueGraphComponent } from '../value-graph.component/value-graph.component';
 import { RaceService } from '../race.service/race.service';
 import { Observable, Subscription } from 'rxjs/Rx';
 
 @Component({
     selector: 'rower',
     templateUrl: 'app/rower.component/rower.component.html',
-    directives: [StrokeGraphComponent],
+    directives: [ValueGraphComponent],
     styleUrls: ['app/rower.component/rower.component.css']
 })
 export class RowerComponent {

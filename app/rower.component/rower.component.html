@@ -7,9 +7,9 @@
 <div class="body">
     <div class="rowerdata">
         <div>
-            <stroke-graph [strokeRates]="rower.strokeRates" class="value"></stroke-graph>
-            <div class="value">{{ rower.strokeRates.length > 0 ? rower.strokeRates[rower.strokeRates.length - 1] : 0 }}<span class="units">/s</span></div>
-            <p class="label">STROKE RATE</p>
+            <value-graph [values]="rower.speeds" class="value"></value-graph>
+            <div class="value">{{ rower.speeds.length > 0 ? rower.speeds[rower.speeds.length - 1] : 0 }}<span class="units">m/s</span></div>
+            <p class="label">SPEED</p>
         </div>
         <div>
             <div class="value">{{rower.distance}}<span class="units">m</span></div>

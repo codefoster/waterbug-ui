@@ -38,6 +38,7 @@ export class RaceService {
                 this.rowers.push({
                     name: d.name,
                     strokeRates: [],
+                    speeds: [],
                     caloriesPerMinute: 0,
                     distance: 0
                 });
@@ -46,6 +47,7 @@ export class RaceService {
             if (this.raceOn) {
                 let r = this.rowers.filter(r => r.name == d.name)[0];
                 r.strokeRates.push(d.strokeRate);
+                r.speeds.push(d.speed);
                 r.distance = Math.min(this.raceDistance, d.distance);
                 if (r.distance >= this.raceDistance) {
                     //TODO:declare winner
@@ -58,7 +60,7 @@ export class RaceService {
         this.messages$.filter(m => m.message == "startrace").subscribe(d => {
             this.startTime = d.startTime;
             this.raceDistance = d.distance;
-            this.rowers.forEach(r => { r.distance = 0; r.strokeRates = []; });
+            this.rowers.forEach(r => { r.distance = 0; r.strokeRates = []; r.speeds = []; });
             console.log(`race started\n  start time: ${this.startTime}\n  race distance: ${this.raceDistance}`);
         });
 
@@ -83,7 +85,8 @@ export class RaceService {
             name: name,
             strokeRate: Math.round((Math.random() * 5) + 20),
             caloriesPerMinute: Math.round((Math.random() * 10) + 70),
-            distance: Math.round((Math.random() * 5) + 20)
+            distance: Math.round((Math.random() * 5) + 20),
+            speed: Math.round((Math.random() * 30) + 200)
         })
     }
 
@@ -91,7 +94,7 @@ export class RaceService {
         this.socket.send({
             message: "startrace",
             startTime: new Date(),
-            distance: this.config.defaultRaceDistance //hard code to distance for now
+            distance: this.config.defaultRaceDistance
         });
     }
 
