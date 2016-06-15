@@ -34,8 +34,6 @@
         '@angular/http',
         '@angular/platform-browser',
         '@angular/platform-browser-dynamic',
-        '@angular/router',
-        '@angular/router-deprecated',
         '@angular/testing',
         '@angular/upgrade',
     ];
