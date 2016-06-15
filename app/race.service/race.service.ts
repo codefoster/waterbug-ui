@@ -45,23 +45,22 @@ export class RaceService {
                 console.log(`adding ${d.name}`);
                 this.rowers.push({
                     name: d.name,
-                    strokeRates: [],
-                    speeds: [],
-                    caloriesPerMinute: 0,
+                    stroke_average: [],
+                    speed_average: [],
                     distance: 0
                 });
             }
 
             if (this.raceOn) {
                 let r = this.rowers.filter(r => r.name == d.name)[0];
-                r.strokeRates.push(d.strokeRate);
-                r.speeds.push(d.speed);
+                r.stroke_average.push(d.stroke_average);
+                r.speed_average.push(d.speed_average);
                 r.distance = Math.min(this.raceDistance, d.distance);
                 if (r.distance >= this.raceDistance) {
                     //TODO:declare winner
                     this.startTime = null;
                 }
-                if (d.clock) this.clockvalue = d.clock;
+                if (d.clock_down) this.clockvalue = d.clock_down;
             }
         })
 
@@ -69,7 +68,7 @@ export class RaceService {
         this.messages$.filter(m => m.message == "startrace").subscribe(d => {
             this.startTime = d.startTime;
             this.raceDistance = d.distance;
-            this.rowers.forEach(r => { r.distance = 0; r.strokeRates = []; r.speeds = []; });
+            this.rowers.forEach(r => { r.distance = 0; r.stroke_average = []; r.speed_average = []; });
             console.log(`race started\n  start time: ${this.startTime}\n  race distance: ${this.raceDistance}`);
         });
 
@@ -92,10 +91,9 @@ export class RaceService {
         this.socket.send({
             message: "strokedata",
             name: name,
-            strokeRate: Math.round((Math.random() * 5) + 20),
-            caloriesPerMinute: Math.round((Math.random() * 10) + 70),
+            stroke_average: Math.round((Math.random() * 5) + 20),
             distance: Math.round((Math.random() * 5) + 20),
-            speed: Math.round((Math.random() * 30) + 200)
+            speed_average: Math.round((Math.random() * 30) + 200)
         })
     }
 

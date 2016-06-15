@@ -7,8 +7,8 @@
 <div class="body">
     <div class="rowerdata">
         <div>
-            <value-graph [values]="rower.speeds" class="value"></value-graph>
-            <div class="value">{{ rower.speeds.length > 0 ? rower.speeds[rower.speeds.length - 1] : 0 }}<span class="units">m/s</span></div>
+            <value-graph [values]="rower.speed_average" class="value"></value-graph>
+            <div class="value">{{ rower.speed_average.length > 0 ? rower.speed_average[rower.speed_average.length - 1] : 0 }}<span class="units">m/s</span></div>
             <p class="label">SPEED</p>
         </div>
         <div>
